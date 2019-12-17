@@ -32,18 +32,19 @@ http://example.com/stream.m3u8
 But of course, the more channel information you add, the better. Here's an example of what a full version of a link in a playlist might look like:
 
 ```xml
-#EXTINF:-1 tvg-id="exampletv.us" tvg-name="Example TV" tvg-logo="http://example.com/channel-logo.png" group-title="News",Example TV
+#EXTINF:-1 tvg-id="exampletv.us" tvg-name="Example TV" tvg-language="English" tvg-logo="http://example.com/channel-logo.png" group-title="News",Example TV
 http://example.com/stream.m3u8
 ```
 
 More details about each attribute:
 
-| Attribute   | Description
-| ----------- | ---
-| tvg-id      | Channel ID that is used to load EPG (optional)
-| tvg-name    | Channel name that is also sometimes used to load EPG (optional)
-| tvg-logo    | The logo of the channel that will be displayed in the player if it supports it (optional)
-| group-title | The category to which the channel belongs. These categories are also displayed in some players, and grouped playlists are also generated based on them. The list of currently supported categories can be found below (optional)
+| Attribute    | Description
+| ------------ | ---
+| tvg-id       | Channel ID that is used to load EPG. Must match `id` from the EPG file. (optional)
+| tvg-name     | Channel name that is also sometimes used to load EPG. Must match `display-name` from the EPG file. (optional)
+| tvg-language | Channel language. The name of the language must conform to the standard [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (optional)
+| tvg-logo     | The logo of the channel that will be displayed in the player if it supports it (optional)
+| group-title  | The category to which the channel belongs. These categories are also displayed in some players, and grouped playlists are also generated based on them. The list of currently supported categories can be found [here](https://github.com/iptv-org/iptv#playlists-by-category) (optional)
 
 
 ## Sort channels by category
@@ -63,19 +64,25 @@ A complete list of supported categories can be found [here](https://github.com/i
 
 You can help sorting channels by country by moving the link to the channel with the entire description from one playlist in the `channels/` folder to another. Be careful, any changes outside the `channels/` folder will not be accepted, since the rest of the playlists are generated automatically.
 
-It should also be noted that the channels are not sorted by country of stream source, but by the country in which they are broadcast. If the same channel is broadcast in several countries at once, you can move it to the `channels/int.m3u`.
+To determine which country the channel belongs to you can search for it on the [LyngSat](https://www.lyngsat.com/search.html). This site contains a short description for most satellite TV channels, but in this case we are only interested in the country name written under the channel logo, as here: https://www.lyngsat.com/radiochannels/us/CNN-USA.html
+
+Also you can try searching for a channel on [Wikipedia](https://www.wikipedia.org/). Usually channels have a separate raw in the description indicating the country. You can see what it looks like on this page - https://en.wikipedia.org/wiki/CNN
+
+It also happens that a channel belongs to more than one country. In this case, it should be saved to all relevant playlists.
+
+However, there are situations when the channel is literally not assigned to any country (for example, DJing or Red Bull TV). In this case, you can simply move the link to a special international playlist - `channels/int.m3u`.
 
 ## Remove broken broadcasts
 
-To make sure that the broadcast does not work, just start it in one of the supported players (preferably in the VLC player) and wait at least a minute. The fact is that some broadcasts are started with a delay due to the location of the source. 
+To make sure that the broadcast works you need to run it in two main applications: VLC player (https://www.videolan.org/) and Kodi (https://kodi.tv/). After starting, do not forget to wait at least a minute, as some broadcasts are started with a delay due to the location of the source.
 
 If it turns out that the broadcast still does not start, this means that it can be safely deleted from the playlist. At the same time, you should delete not only the link to the channel but also the description for it. 
 
 It would also be nice if you indicated in the description of the PR the reason for the removal of the channel, so that other members of the community could also double-check the channel for their part.
 
-It is also possible to automatically find broken broadcasts. To do this, you first need to install [Node.js](https://nodejs.org/en/) on your computer.
+It is also possible to automatically find broken broadcasts. To do this, you first need to install [Node.js](https://nodejs.org/en/) and [ffmpeg](https://www.ffmpeg.org) on your computer.
 
-Copy this repository to your computer. Then open it in the console line and install all the dependencies from it by running this command:
+After that copy this repository to your computer, open it in the console and install all the dependencies from it by running this command:
 
 ```sh
 npm install

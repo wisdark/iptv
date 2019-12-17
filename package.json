@@ -1,9 +1,10 @@
 {
   "name": "iptv",
   "scripts": {
-    "test": "node test/index.js",
-    "generate": "node helpers/generate.js",
-    "format": "node helpers/format.js"
+    "test": "node scripts/test.js",
+    "format": "node scripts/format.js",
+    "generate": "node scripts/generate.js",
+    "update-readme": "node scripts/update-readme.js"
   },
   "author": "Arhey <free.arhey@gmail.com>",
   "private": true,
@@ -11,8 +12,11 @@
   "dependencies": {},
   "devDependencies": {
     "axios": ">=0.18.1",
-    "m3u8-file-parser": "^0.2.1",
-    "playlist-parser": "0.0.12",
-    "xmldom": "^0.1.27"
+    "epg-parser": "^0.1.1",
+    "escape-string-regexp": "^2.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "iptv-playlist-parser": "^0.3.0",
+    "iso-639-1": "^2.1.0",
+    "markdown-include": "^0.4.3"
   }
 }
