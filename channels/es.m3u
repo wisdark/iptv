@@ -257,9 +257,9 @@ http://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/index_1000_av-p.m3u8
 http://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/index_1000_av-p.m3u8?sd=10&rebase=on?iptvgratis?chile.m3u8
 #EXTINF:-1 tvg-id="Real Madrid TV ES" tvg-name="Real Madrid TV ES" tvg-language="Spanish" tvg-logo="https://i.imgur.com/2M9WfqA.jpg" group-title="Sport",Real Madrid TV
 http://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8
-#EXTINF:-1 tvg-id="Real Madrid TV ES" tvg-name="Real Madrid TV ES" tvg-language="Spanish" tvg-logo="https://i.imgur.com/2M9WfqA.jpg" group-title="Sport",Real Madrid TV (English)
+#EXTINF:-1 tvg-id="Real Madrid TV ES" tvg-name="Real Madrid TV ES" tvg-language="English" tvg-logo="https://i.imgur.com/2M9WfqA.jpg" group-title="Sport",Real Madrid TV (English)
 http://rmtv24hweblive-lh.akamaihd.net/i/rmtv24hweben_1@300662/index_3_av-b.m3u8
-#EXTINF:-1 tvg-id="Real Madrid TV ES" tvg-name="Real Madrid TV ES" tvg-language="Spanish" tvg-logo="https://i.imgur.com/2M9WfqA.jpg" group-title="Sport",Real Madrid TV (English)
+#EXTINF:-1 tvg-id="Real Madrid TV ES" tvg-name="Real Madrid TV ES" tvg-language="English" tvg-logo="https://i.imgur.com/2M9WfqA.jpg" group-title="Sport",Real Madrid TV (English)
 http://rmtv24hweblive-lh.akamaihd.net/i/rmtv24hweben_1@300662/master.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Spanish" tvg-logo="https://i.imgur.com/o8EtLad.png" group-title="",RiberaTV
 http://common01.todostreaming.es/live/ribera-livestream.m3u8
@@ -301,6 +301,8 @@ http://5.189.181.203:1935/gcm4/gcm4/chunklist.m3u8
 http://ventdelnord.tv:8080/girona/directe.m3u8?fluxustv.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Spanish" tvg-logo="https://i.imgur.com/0AssUlj.jpg" group-title="Local",TPA 7
 https://cdnlive.shooowit.net/rtpalive/directo.smil/.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Spanish" tvg-logo="https://bopiweb.com/imagenes/2580/tomo.1.M-3503739-3.jpg" group-title="Local",Trebujena TV
+https://wowzaprod256-i.akamaihd.net/hls/live/779970/7e9bac89/playlist.m3u8
 #EXTINF:-1 tvg-id="13 TV" tvg-name="" tvg-language="Spanish" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Trece.svg/320px-Trece.svg.png" group-title="",Trece
 http://streaming.enetres.net/091DB7AFBD77442B9BA2F141DCC182F5021/live.smil/master.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-language="Spanish" tvg-logo="https://i.imgur.com/A4idkRI.png" group-title="",TV Hellin
